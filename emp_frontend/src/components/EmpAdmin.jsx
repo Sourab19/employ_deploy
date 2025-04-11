@@ -11,7 +11,7 @@ const EmpAdmin = () => {
 
 
     useEffect(()=>{
-      axiosInstance.get("/emp").then((res)=>{
+      axiosInstance.get("https://employ-deploy-server.vercel.app/emp").then((res)=>{
        setData(res.data);
      }).catch((err)=>{
        console.log(err);
