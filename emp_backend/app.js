@@ -7,21 +7,18 @@ require("dotenv").config();
 require("./db/connection");
 
 app.use(morgan("dev"));
-app.use(
-  cors({
-    origin: ['https://employ-deploy-client.vercel.app'],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ['Content-Type', 'Authorization','token'],
-  })
-);
-
-app.options("*", cors({
-  origin: ['https://employ-deploy-client.vercel.app'],
+const corsOptions = {
+  origin: "https://employ-deploy-client.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization", "token"],
-}));
+  allowedHeaders: ["Content-Type", "Authorization", "token"]
+};
+
+
+app.use(cors(corsOptions));
+
+
+app.options("*", cors(corsOptions));
 
 
 
