@@ -21,12 +21,7 @@ const EmpAdmin = () => {
       navigate('/add',{state:{val}});
     }
     function delVal(val){
-      axiosInstance.delete(`https://employ-deploy-server.vercel.app/delete/${val._id}`,{
-        headers: {
-          token: sessionStorage.getItem("token")
-        },
-        withCredentials: true
-      }).then((res)=>{
+      axiosInstance.delete(`https://employ-deploy-server.vercel.app/emp/delete/${val._id}`).then((res)=>{
       alert("Deleted Successfully")
       setData(data.filter(item => item._id !== val._id)); 
       navigate('/admin');

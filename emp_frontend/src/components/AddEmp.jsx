@@ -38,17 +38,9 @@ const AddEmp = () => {
       }
     },[])
     function subVal(){
-      const token = sessionStorage.getItem("token");
-
-    const config = {
-    headers: {
-      token: token
-    },
-    withCredentials: true
-  };
+     
       if (location.state!=null) {
-        axiosInstance.put('https://employ-deploy-server.vercel.app/update/'+location.state.val._id,form ,
-          config).then((res)=>{
+        axiosInstance.put('https://employ-deploy-server.vercel.app/emp/update/'+location.state.val._id,form).then((res)=>{
           alert('Updated Successfully')
           navigate('/admin');
   
@@ -57,8 +49,7 @@ const AddEmp = () => {
         })
       }
       else{
-        axiosInstance.post('https://employ-deploy-server.vercel.app/add',form,
-          config).then((res)=>{
+        axiosInstance.post('https://employ-deploy-server.vercel.app/emp/add',form).then((res)=>{
           alert('Added Successfully')
           navigate('/admin');
         }).catch((error)=>{
