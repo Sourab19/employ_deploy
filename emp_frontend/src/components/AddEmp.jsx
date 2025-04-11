@@ -40,12 +40,7 @@ const AddEmp = () => {
     function subVal(){
      
       if (location.state!=null) {
-        axiosInstance.put('https://employ-deploy-server.vercel.app/emp/update/'+location.state.val._id,form , {
-          headers: {
-            token: sessionStorage.getItem("token")
-          },
-          withCredentials: true
-        }).then((res)=>{
+        axiosInstance.put('/emp/update/'+location.state.val._id,form ).then((res)=>{
           alert('Updated Successfully')
           navigate('/admin');
   
@@ -54,12 +49,7 @@ const AddEmp = () => {
         })
       }
       else{
-        axiosInstance.post('https://employ-deploy-server.vercel.app/emp/add',form,  {
-          headers: {
-            token: sessionStorage.getItem("token")
-          },
-          withCredentials: true
-        }).then((res)=>{
+        axiosInstance.post('/emp/add',form).then((res)=>{
           alert('Added Successfully')
           navigate('/admin');
         }).catch((error)=>{

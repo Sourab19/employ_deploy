@@ -8,7 +8,7 @@ const EmpUser = () => {
     const [data,setData] =useState([]);
 
  useEffect(()=>{
-  axiosInstance.get("https://employ-deploy-server.vercel.app/emp/get").then((res)=>{
+  axiosInstance.get("/emp/get").then((res)=>{
     setData(res.data);
   }).catch((err)=>{
     console.log(err);
