@@ -11,7 +11,7 @@ const EmpAdmin = () => {
 
 
     useEffect(()=>{
-      axiosInstance.get("https://employ-app-server.vercel.app/emp").then((res)=>{
+      axiosInstance.get("https://employ-deploy-server.vercel.app/emp").then((res)=>{
        setData(res.data);
      }).catch((err)=>{
        console.log(err);
@@ -21,7 +21,7 @@ const EmpAdmin = () => {
       navigate('/add',{state:{val}});
     }
     function delVal(val){
-      axiosInstance.delete(`https://employ-app-server.vercel.app/delete/${val._id}`).then((res)=>{
+      axiosInstance.delete(`https://employ-deploy-server.vercel.app/delete/${val._id}`).then((res)=>{
       alert("Deleted Successfully")
       setData(data.filter(item => item._id !== val._id)); 
       navigate('/admin');

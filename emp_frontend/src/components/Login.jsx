@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   function capValue() {
     axios
-      .post("https://employ-app-server.vercel.app/user/login", userForm)
+      .post("https://employ-deploy-server.vercel.app/user/login", userForm)
       .then((res) => {
         alert(res.data.message);
         if (res.data.token) {
@@ -25,7 +25,7 @@ const Login = () => {
   }
   function adminVal() {
     axios
-      .post("https://employ-app-server.vercel.app/admin/login", adminForm)
+      .post("https://employ-deploy-server.vercel.app/admin/login", adminForm)
       .then((res) => {
         alert(res.data.message);
         if (res.data.token) {

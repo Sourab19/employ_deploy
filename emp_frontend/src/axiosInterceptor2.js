@@ -1,6 +1,6 @@
 import axios from "axios";
 const axiosInstance=axios.create({
-    baseURL:'https://employ-app-server.vercel.app/'
+    baseURL:'https://employ-deploy-server.vercel.app/'
 })
 axiosInstance.interceptors.request.use(function (config) {
     
