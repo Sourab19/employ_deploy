@@ -7,14 +7,14 @@ require("dotenv").config();
 require("./db/connection");
 
 app.use(morgan("dev"));
-// app.use(
-//   cors({
-//     origin: ["https://employ-app-client.vercel.app/"],
-//     credentials: true,
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//   })
-// );
-app.use(cors());
+app.use(
+  cors({
+    origin: ['https://employ-deploy-client.vercel.app'],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
+// app.use(cors());
 
 
 
